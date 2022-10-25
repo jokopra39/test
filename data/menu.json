@@ -75,5 +75,25 @@
         "component": "pages/user/_id.vue"
       }
     ]
+  },
+  {
+    "name": "search",
+    "icon": "mdi-account-circle",
+    "title": "SEARCH",
+    "to": "/search",
+    "no": 4,
+    "role": [
+      "ADMIN"
+    ]
+  },
+  {
+    "name": "result",
+    "icon": "mdi-account-circle",
+    "title": "RESULT",
+    "to": "/result",
+    "no": 5,
+    "role": [
+      "ADMIN"
+    ]
   }
 ]

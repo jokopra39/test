@@ -140,8 +140,8 @@
             <v-col class="grow"> error : {{ $store.state.errorText }} </v-col>
           </v-row>
         </v-alert>
-        <!-- <header-page :setPageTitle="pageTitle" :setPageIcon="pageIcon" />
-        <v-divider class="pt-3" /> -->
+        <header-page :setPageTitle="pageTitle" :setPageIcon="pageIcon" />
+        <v-divider class="pt-3" />
         <Nuxt />
       </v-container>
     </v-main>
@@ -161,9 +161,9 @@ export default {
   created() {
     this.getAllMenu();
     this.$vuetify.theme.dark = this.$cookie.get("dark");
-    // if (this.$cookie.get("auth") == "") {
-    //   this.$router.push("/auth/login");
-    // }
+    if (this.$cookie.get("auth") == "") {
+      this.$router.push("/auth/login");
+    }
   },
   data() {
     return {

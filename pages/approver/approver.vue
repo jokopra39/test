@@ -424,7 +424,6 @@ export default {
     },
     detailHistory(id) {
       this.dialogHistory = true;
-      //MARK TEDD
       let newPayload = { IsReview: true };
       this.$axios
         .post(`api/tindaklanjut/historylist/617123466432ec2747cf846e`, newPayload)

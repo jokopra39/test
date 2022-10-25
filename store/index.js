@@ -8,7 +8,8 @@ export const state = () => {
     breadcrumbs: [],
     getPage: {},
     lastRetrieval: '0',
-    snackbar: false
+    snackbar: false,
+    search: ''
   }
 }
 
@@ -62,5 +63,9 @@ export const mutations = {
 
   setLastRetrieval(state, data) {
     state.lastRetrieval = data
+  },
+
+  setSearch(state, msg) {
+    state.search = msg
   },
 }
