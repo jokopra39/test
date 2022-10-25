@@ -14,7 +14,7 @@
               v-show="!miniVariant"
               style="margin-left: -7px"
             >
-              <div id="title-text" style="min-width: 200px">SIPTL</div>
+              <div id="title-text" style="min-width: 200px">{{nameApp}}</div>
             </v-list-item-content>
             <v-btn icon @click.stop="miniVariant = !miniVariant">
               <v-icon
@@ -140,8 +140,8 @@
             <v-col class="grow"> error : {{ $store.state.errorText }} </v-col>
           </v-row>
         </v-alert>
-        <header-page :setPageTitle="pageTitle" :setPageIcon="pageIcon" />
-        <v-divider class="pt-3" />
+        <!-- <header-page :setPageTitle="pageTitle" :setPageIcon="pageIcon" />
+        <v-divider class="pt-3" /> -->
         <Nuxt />
       </v-container>
     </v-main>
@@ -161,12 +161,13 @@ export default {
   created() {
     this.getAllMenu();
     this.$vuetify.theme.dark = this.$cookie.get("dark");
-    if (this.$cookie.get("auth") == "") {
-      this.$router.push("/auth/login");
-    }
+    // if (this.$cookie.get("auth") == "") {
+    //   this.$router.push("/auth/login");
+    // }
   },
   data() {
     return {
+      nameApp: "Test Logique",
       text: "My timeout is set to 2000.",
       timeout: 2000,
       selectedItem: 0,
