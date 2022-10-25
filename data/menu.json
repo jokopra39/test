@@ -1,0 +1,79 @@
+[
+  {
+    "name": "dashboard",
+    "icon": "mdi-view-dashboard",
+    "title": "DASHBOARD",
+    "to": "/dashboard",
+    "no": 0,
+    "role": [
+      "ADMIN",
+      "INSPEKTUR"
+    ],
+    "children": [
+      {
+        "name": "dashboard-id",
+        "path": "/:id?",
+        "component": "pages/dashboard/_id.vue"
+      }
+    ]
+  },
+  {
+    "name": "opd",
+    "icon": "mdi-account-check",
+    "title": "OPD",
+    "to": "/opd/opd",
+    "no": 1,
+    "role": [
+      "ADMIN",
+      "USER",
+      "PSTATUS",
+      "SEKERTARIS",
+      "INSPEKTUR"
+    ],
+    "children": [
+      {
+        "name": "opd-id",
+        "path": "/:id?",
+        "component": "pages/opd/_id.vue"
+      }
+    ]
+  },
+  {
+    "name": "approver",
+    "icon": "mdi-checkbox-marked-outline",
+    "title": "APPROVER",
+    "to": "/approver/approver",
+    "no": 2,
+    "role": [
+      "ADMIN",
+      "USER",
+      "PSTATUS",
+      "SEKERTARIS",
+      "INSPEKTUR"
+    ],
+    "children": [
+      {
+        "name": "approver-id",
+        "path": "/:id?",
+        "component": "pages/approver/_id.vue"
+      }
+    ]
+  },
+  {
+    "name": "usermanagement",
+    "icon": "mdi-account-circle",
+    "title": "USER",
+    "to": "/user/usermanagement",
+    "no": 3,
+    "role": [
+      "ADMIN"
+    ],
+    "children": [
+      {
+        "name": "usermanagement-id",
+        "path": "/:id?",
+        "component": "pages/user/_id.vue"
+      }
+    ]
+  }
+]
