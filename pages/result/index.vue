@@ -117,7 +117,7 @@
           class="inp btn-search-result mt-4"
           type="button"
         >
-          Load More
+          Load More ({{tempItems.length}})
         </button>
       </div>
     </div>
