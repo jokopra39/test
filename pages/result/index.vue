@@ -72,11 +72,11 @@
                   </v-avatar>
                   <div style="width: 100%">
                     <v-row class="mt-1">
-                      <v-col class="artis-name"> {{ item.artistName }} </v-col>
+                      <v-col class="artis-name"> {{ textTruncate(item.artistName, 40) }} </v-col>
                     </v-row>
                     <v-row class="mt-1" style="height: 46px">
                       <v-col class="track-name">
-                        {{ textTruncate(item.collectionName) }}
+                        {{ textTruncate(item.collectionName, 60) }}
                       </v-col>
                     </v-row>
                     <v-row cols="12">
@@ -216,10 +216,10 @@ export default {
           this.loading = false;
         });
     },
-    textTruncate: function (v) {
+    textTruncate: function (v, c) {
       let text = v;
-      if (v.length > 60) {
-        text = v.substring(0, 60) + "...";
+      if (v.length > c) {
+        text = v.substring(0, c) + "...";
       }
       return text;
     },
