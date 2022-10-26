@@ -76,7 +76,7 @@
                     </v-row>
                     <v-row class="mt-1" style="height: 46px">
                       <v-col class="track-name">
-                        {{ textTruncate(item.collectionName, 60) }}
+                        {{ textTruncate(item.trackName, 60) }}
                       </v-col>
                     </v-row>
                     <v-row cols="12">
