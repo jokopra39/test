@@ -20,7 +20,7 @@
           <div>
             <div>
               <button
-                class="inp btn-search mt-5"
+                class="inp btn-search-dialog mt-5"
                 @click="actionSearch"
                 type="button"
               >
@@ -141,7 +141,7 @@ export default {
   width: 300px;
   border-radius: 20px;
 }
-.btn-search {
+.btn-search-dialog {
   border: none;
   color: white;
   text-decoration: none;
