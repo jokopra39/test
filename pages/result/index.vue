@@ -155,7 +155,7 @@ export default {
     inputSearch: "",
     menuItem: ["Home", "Search"],
     resultFor: "Search result for :",
-    resultVal: "Json Mraz",
+    resultVal: "",
     dialogSearch: false,
     titlePopup: "Search",
     items: [],
