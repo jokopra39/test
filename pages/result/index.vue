@@ -62,7 +62,7 @@
         style="max-height: 500px; background-color: transparent"
         class="overflow-y-auto"
       >
-        <template v-for="(item, i) in items">
+        <template v-for="(item, i) in tempItems">
           <v-list-item :key="i">
             <v-col class="py-2 px-3">
               <v-card class="rounded-lg">
@@ -112,7 +112,11 @@
         </template>
       </v-list>
       <div class="text-center">
-        <button class="inp btn-search-result mt-4" type="button">
+        <button
+          @click="loadMore()"
+          class="inp btn-search-result mt-4"
+          type="button"
+        >
           Load More
         </button>
       </div>
@@ -155,7 +159,9 @@ export default {
     dialogSearch: false,
     titlePopup: "Search",
     items: [],
+    tempItems: [],
     loading: false,
+    countPage: 0,
   }),
   mounted() {
     this.$store.commit("setErrorText", "");
@@ -194,8 +200,11 @@ export default {
           newPayload
         )
         .then((res) => {
+          this.countPage = 0;
           let data = res.data.results;
           this.items = data;
+          this.tempItems = [];
+          this.loadMore();
         })
         .catch((e) => {
           this.$store.commit("setSnackbar", {
@@ -213,6 +222,28 @@ export default {
         text = v.substring(0, 60) + "...";
       }
       return text;
+    },
+    loadMore: function () {
+      let tempPage = this.countPage;
+      if (tempPage < 3) {
+        this.loading = true;
+        for (let i in this.items) {
+          if (tempPage === 0 && i < 10) {
+            this.tempItems.push(this.items[i]);
+            this.countPage = 1;
+            console.log(this.tempItems.length, tempPage);
+          } else if (tempPage === 1 && i > 9 && i < 20) {
+            this.tempItems.push(this.items[i]);
+            this.countPage = 2;
+            console.log(this.tempItems.length, tempPage);
+          } else if (tempPage === 2 && i > 19 && i < 25) {
+            this.tempItems.push(this.items[i]);
+            this.countPage = 3;
+            console.log(this.tempItems.length, tempPage);
+          }
+        }
+        setTimeout(() => (this.loading = false), 2000);
+      }
     },
   },
 };
